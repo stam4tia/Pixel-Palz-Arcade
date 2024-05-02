@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, #96b2ff, #d3a0ff, #ff9af0);
+    background-size: 600% 600%;
+    animation: gradientBG 10s ease infinite;
+    position: relative;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.arcade {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url('ArcadeBackground.gif');
+    background-size: cover;
+    animation: bubbleAnim 40s linear infinite;
+    opacity: 0.5; 
+}
+
+.container {
+    max-width: 2000px;
+    margin: 0px auto;
+    text-align: center;
+    position: relative;
+    z-index: 1; /* makes the container appears above the arcade background */
+}
+
+.main-image {
+    width: 400px;
+    height: 300px;
+    overflow: hidden;
+    margin: 0 auto;
+    background-image: url('PixelPalsIndexLogo.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.icon-container {
+    margin-top: 20px;
+}
+
+.icon-container img {
+    width: 120px;
+    height: 120px;
+    margin: 0 20px;
+    cursor: pointer;
+    transition: transform 0.6s ease;
+}
+
+.icon-container img:hover {
+    transform: scale(1.4);
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    text-align: center;
+    padding: 10px 0;
+    font-family: "VT323", monospace; /* set VT323 font */
+    z-index: 2; /* makes the footer appears above the arcade background */
+}
+
+.footer-text {
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: rgb(0, 89, 253) !important;
+}

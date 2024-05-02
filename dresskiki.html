@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="dresskiki.css">
+    <title>Dress Up Kiki</title>
+
+</head>
+<a href="index.html" class="logo-link">
+    <img src="PixelPalzLogo.png" alt="PixelPalz Logo" class="logo">
+  </a>
+<div class="menu-toggle" onclick="toggleMenu()">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+  <div class="dropdown-content" id="dropdownContent">
+    <a href="kikispie.html">Kiki's Pie</a>
+    <a href="dresskiki.html">Dress Up Kiki</a>
+    <a href="bubbles.html">Bubbles Trouble</a>
+    <a href="mauve.html">Mauve the Frog</a>
+    <a href="magic.html">Magic the Butterfly</a>
+  </div>
+
+  <footer>
+    <div class="footer-text">
+      <a href="https://github.com/stam4tia" target="_blank" style="text-decoration: none; color: #000000;">© 2024 Stamatia Daramboukas</a>
+    </div>
+  </footer>
+
+<body> 
+    
+    <div id="container">
+
+    <!-- Background image -->
+    <img id="background" src="dresskikibackground.png" alt="Background">
+
+    <!-- Kiki avatar -->
+    <div id="avatarContainer">
+    <img id="avatar" src="kikiOG.png" alt="Avatar">
+    </div>
+
+    <!-- Start image -->
+    <img id="start" src="dresskikistart.gif" alt="Start Screen" usemap="#start-map">
+
+    <!-- Define an image map for clickable areas -->
+    <map name="start-map">
+        <!-- Define clickable area for starting the game -->
+        <area target="" alt="" title="" href="javascript:void(0);" onclick="loadClothes()" coords="810,797,1279,979" shape="rect">
+    </map>
+
+
+    <!-- Clothes selection area -->
+    <img id="clothes-select" src="clothes_select.png" alt="Clothes Select" usemap="#clothes-select-map" style="display: none;">
+    <map name="clothes-select-map">
+
+
+
+        <!-- Finish Screen -->
+        <area target="" alt="" title="" href="javascript:void(0);" onclick="loadFinishScreen()" coords="12,1287,237,1365" shape="rect">
+
+
+        <!-- Strawberry hat -->
+        <area target="" alt="" title="" href="javascript:void(0);" onclick="toggleDress('strawberry_hat.png')" coords="875,101,947,206" shape="rect">
+        <!-- Flower hat -->
+        <area target="" alt="" title="" href="javascript:void(0);" onclick="toggleDress('flower_hat.png')" coords="1161,113,1236,208" shape="rect"  >
+        <!-- Party hat -->
+        <area target="" alt="" title="" href="javascript:void(0);" onclick="toggleDress('party_hat.png')" coords="856,220,934,355" shape="rect">
+        <!-- Black hat -->
+        <area target="" alt="" title="" href="javascript:void(0);" onclick="toggleDress('black_hat.png')" coords="1014,349,944,248,1002,221,1031,271,1065,267,1130,188,1109,357,1048,335" shape="poly">
+        <!-- Bow -->
+        <area target="" alt="" title="" href="javascript:void(0);"onclick="toggleDress('bow.png')" coords="981,108,1104,186" shape="rect">
+        <!-- Beanie -->
+        <area target="" alt="" title="" href="javascript:void(0);" onclick="toggleDress('beanie.png')" coords="1153,250,1254,346" shape="rect">
+
+
+
+        <!-- Strawberry eyes -->
+        <area target="" alt="" title="" href="javascript:void(0);" onclick="toggleDress('strawberry_eyes.png')" coords="871,541,1009,598" shape="rect">
+        <!-- Blush -->
+        <area target="" alt="" title="" href="javascript:void(0);" onclick="toggleDress('blush.png')" coords="1199,626,1339,666" shape="rect">
+        <!-- Clown makeup -->
+        <area target="" alt="" title="" href="javascript:void(0);" onclick="toggleDress('clown_makeup.png')" coords="1187,452,1344,604" shape="rect">
+        <!-- Pale skin -->
+        <area target="" alt="" title="" href="javascript:void(0);" onclick="toggleDress('pale_skin.png')" coords="1041,480,1173,591" shape="rect">
+        <!-- Blue eyes -->
+        <area target="" alt="" title="" href="javascript:void(0);" onclick="toggleDress('blue_eyes.png')" coords="864,473,1001,525" shape="rect">
+        <!-- Snow goggles -->
+        <area target="" alt="" title="" href="javascript:void(0);" onclick="toggleDress('snow_goggles.png')" coords="1035,612,1180,662" shape="rect">
+        <!-- Eyes closed -->
+        <area target="" alt="" title="" href="javascript:void(0);" onclick="toggleDress('eyes_closed.png')" coords="843,613,997,672" shape="rect">
+
+
+
+        <!-- Strawberry dress -->
+        <area target="" alt="" title="" href="javascript:void(0);" onclick="toggleDress('strawberry_dress.png')" coords="801,788,910,917" shape="rect">
+        <!-- Flower dress -->
+        <area target="" alt="" title="" href="javascript:void(0);"onclick="toggleDress('flower_dress.png')" coords="1072,824,1175,950" shape="rect">
+        <!-- Clown dress -->
+        <area target="" alt="" title="" href="javascript:void(0);" onclick="toggleDress('clown_dress.png')" coords="1197,781,1300,907" shape="rect">
+        <!-- Goth dress -->
+        <area target="" alt="" title="" href="javascript:void(0);" onclick="toggleDress('goth_dress.png')" coords="938,773,1041,899" shape="rect">
+        <!-- Bow dress -->
+        <area target="" alt="" title="" href="javascript:void(0);" onclick="toggleDress('bow_dress.png')" coords="801,945,904,1071" shape="rect">
+        <!-- Snow jacket -->
+        <area target="" alt="" title="" href="javascript:void(0);" onclick="toggleDress('snow_jacket.png')" coords="1041,1063,1091,970,1159,978,1195,1069" shape="poly">
+        <!-- Cat dress -->
+        <area target="" alt="" title="" href="javascript:void(0);" onclick="toggleDress('cat_dress.png')" coords="1216,924,1319,1050" shape="rect">
+        <!-- Pumpkin dress -->
+        <area target="" alt="" title="" href="javascript:void(0);" onclick="toggleDress('pumpkin_dress.png')" coords="924,928,1034,1036" shape="rect">
+
+
+        <!-- Brown boots -->
+        <area target="" alt="" title="" href="javascript:void(0);" onclick="toggleDress('brown_boots.png')" coords="739,1186,913,1249" shape="rect" >
+        <!-- Clown boots -->
+        <area target="" alt="" title="" href="javascript:void(0);" onclick="toggleDress('clown_boots.png')" coords="1132,1175,1371,1240" shape="rect">
+        <!-- Goth boots -->
+        <area target="" alt="" title="" href="javascript:void(0);" onclick="toggleDress('goth_boots.png')" coords="962,1175,1099,1251" shape="rect">
+        <!-- Heart boots -->
+        <area target="" alt="" title="" href="javascript:void(0);" onclick="toggleDress('heart_boots.png')" coords="745,1271,935,1345" shape="rect">
+        <!-- Snow boots -->
+        <area target="" alt="" title="" href="javascript:void(0);" onclick="toggleDress('snow_boots.png')" coords="1148,1270,1338,1344" shape="rect">
+        <!-- White boots -->
+        <area target="" alt="" title="" href="javascript:void(0);" onclick="toggleDress('white_boots.png')" coords="953,1283,1128,1356" shape="rect">
+
+
+
+</map>
+
+    <!-- finish image -->
+    <img id="finish" src="dresskikifinish.png" alt="Finish" usemap="#finish-map" style="display: none;">
+    <map name="finish-map">
+        <!-- refresh area -->
+        <area target="" alt="" title="" href="javascript:void(0);" onclick="refreshPage()" coords="861,1145,1282,1244" shape="rect">
+         <!-- screenshot area -->
+         <area target="" alt="" title="" href="javascript:void(0);" onclick="downloadPageAsPNG()" coords="1009,962,1145,1095" shape="rect">
+        </map>
+    </map>
+
+
+
+    
+
+
+<script src="dresskiki.js"></script>
+
+
+</body>
+
+
+
+</html>
