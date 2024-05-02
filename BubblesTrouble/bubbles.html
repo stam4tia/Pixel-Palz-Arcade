@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/addons/p5.sound.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="bubbles.css">
+  <meta charset="utf-8" />
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+
+  <a href="index.html" class="logo-link">
+    <img src="PixelPalzLogo.png" alt="PixelPalz Logo" class="logo">
+  </a>
+
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+  <div class="dropdown-content" id="dropdownContent">
+    <a href="kikispie.html">Kiki's Pie</a>
+    <a href="dresskiki.html">Dress Up Kiki</a>
+    <a href="bubbles.html">Bubble's Trouble</a>
+    <a href="mauve.html">Mauve the Frog</a>
+    <a href="magic.html">Magic the Butterfly</a>
+  </div>
+
+  <main class="hover-container">
+    
+  </main>
+  <script src="bubbles.js"></script>
+
+  <script>
+    function toggleMenu() {
+      var dropdownContent = document.getElementById("dropdownContent");
+      dropdownContent.style.display === "none" ? dropdownContent.style.display = "block" : dropdownContent.style.display = "none";
+    }
+  </script>
+</body>
+
+
+<footer>
+  <div class="footer-text">
+    <a href="https://github.com/stam4tia" target="_blank" style="text-decoration: none; color: #000000;">© 2024 Stamatia Daramboukas</a>
+  </div>
+</footer>
+
+</html>
+
