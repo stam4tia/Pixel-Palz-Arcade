@@ -1,0 +1,123 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: rgb(0, 174, 101); 
+  font-family: "Pixelated", sans-serif; /* set pixelated font */
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; 
+}
+
+canvas {
+  display: block;
+  border: 10px solid #005408; 
+  border-radius: 20px; 
+  transform: scale(0.75); /* Zoom out by % */
+
+}
+
+
+
+.logo-link {
+  position: absolute;
+  top: 25px;
+  left: 20px;
+  transition: transform 0.4s; /* Add transition for the transform property */
+}
+
+.logo {
+  width: 170px; /* Adjust size as needed */
+  height: auto;
+}
+
+.logo-link:hover {
+  transform: translateY(2px);
+}
+
+
+
+
+/* hamburger menu styles */
+.menu-toggle {
+  position: absolute;
+  top: 70px;
+  left: 20px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: transform 0.4s, color 0.4s; /* Add color transition */
+}
+
+.bar {
+  width: 30px;
+  height: 3px;
+  background-color: #ffffff;
+  margin: 6px 0;
+}
+
+/* Add pressing down animation and color change */
+.menu-toggle:hover {
+  transform: translateY(2px);
+}
+
+.menu-toggle:hover .bar {
+  background-color: #ff0084; /* Change bar color on hover */
+}
+
+
+  .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fdcdff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1000;
+  top: 110px; 
+  left: 20px; 
+  font-family: "VT323", monospace; /* set VT323 font */
+  font-size: 20px; /* set font size to __px */
+
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-bottom: 1px solid #ccc; /* Add a bottom border */
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+
+footer {
+  position: absolute; 
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-family: "VT323", monospace; /* set VT323 font */
+
+}
+
+.footer-text {
+  color: #ffffff;
+  font-size: 20px;
+  text-align: center;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: rgb(0, 17, 199) !important; 
+}
