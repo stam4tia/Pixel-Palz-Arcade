@@ -1,0 +1,135 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Pixelated", sans-serif; 
+  animation: gradientAnimation 10s infinite alternate; 
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; 
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-color: #2400d7; 
+  }
+  100% {
+    background-color: #5800aa; 
+  }
+  100% {
+    background-color: #630092; 
+  }
+}
+
+
+canvas {
+  display: block;
+  border: 10px solid #4d0099; 
+  border-radius: 20px; 
+  transform: scale(0.75); 
+
+}
+
+
+
+.logo-link {
+  position: absolute;
+  top: 25px;
+  left: 20px;
+  transition: transform 0.4s; 
+}
+
+.logo {
+  width: 170px; 
+  height: auto;
+}
+
+.logo-link:hover {
+  transform: translateY(2px);
+}
+
+
+
+
+/* hamburger menu styles */
+.menu-toggle {
+  position: absolute;
+  top: 70px;
+  left: 20px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: transform 0.4s, color 0.4s; 
+}
+
+.bar {
+  width: 30px;
+  height: 3px;
+  background-color: #ffffff;
+  margin: 6px 0;
+}
+
+.menu-toggle:hover {
+  transform: translateY(2px);
+}
+
+.menu-toggle:hover .bar {
+  background-color: #ff0084; 
+}
+
+
+  .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fdcdff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1000;
+  top: 110px; 
+  left: 20px; 
+  font-family: "VT323", monospace; /* set VT323 font */
+  font-size: 20px; /* set font size to __px */
+
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-bottom: 1px solid #ccc; /* Add a bottom border */
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+
+footer {
+  position: absolute; 
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-family: "VT323", monospace; /* set VT323 font */
+
+}
+
+.footer-text {
+  color: #ffffff;
+  font-size: 20px;
+  text-align: center;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: rgb(0, 237, 254) !important; 
+}
