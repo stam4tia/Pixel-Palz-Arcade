@@ -17,29 +17,29 @@ let splatSound; // splat sound for fruit collision
 
 // specify the images to load after the player wins
 let winImages = [
-  'thanks.PNG',
-  'enjoy.png',
-  'munch.PNG',
-  'nom.PNG',
-  'done.png'
+  '/KikisPie/thanks.PNG',
+  '/KikisPie/enjoy.png',
+  '/KikisPie/munch.PNG',
+  '/KikisPie/nom.PNG',
+  '/KikisPie/done.png'
 ];
 
 function preload() {
-  cutsceneImages.push(loadImage('kikispiestart.gif'));
-  cutsceneImages.push(loadImage('hi.png'));
-  cutsceneImages.push(loadImage('kiki.gif'));
-  cutsceneImages.push(loadImage('help.gif'));
+  cutsceneImages.push(loadImage('/KikisPie/kikispiestart.gif'));
+  cutsceneImages.push(loadImage('/KikisPie/hi.png'));
+  cutsceneImages.push(loadImage('/KikisPie/kiki.gif'));
+  cutsceneImages.push(loadImage('/KikisPie/help.gif'));
 
-  strawberryImage = loadImage('strawberry.png');
-  blueberryImage = loadImage('blueberry.png');
-  raspberryImage = loadImage('raspberry.png');
-  backgroundImage = loadImage('tree.gif');
+  strawberryImage = loadImage('/KikisPie/strawberry.png');
+  blueberryImage = loadImage('/KikisPie/blueberry.png');
+  raspberryImage = loadImage('/KikisPie/raspberry.png');
+  backgroundImage = loadImage('/KikisPie/tree.gif');
 
   // load background audio
-  backgroundSound = loadSound('cute.mp4');
+  backgroundSound = loadSound('/KikisPie/cute.mp4');
 
   // load splat sound
-  splatSound = loadSound('splat.wav');
+  splatSound = loadSound('/KikisPie/splat.wav');
 }
 
 function setup() {
@@ -48,13 +48,14 @@ function setup() {
   frameRate(80);
 
 
-  backgroundSound.setVolume(backgroundSound.getVolume() * 0.3);
-  splatSound.setVolume(splatSound.getVolume() * 0.2);
-
+  backgroundSound.setVolume(0);
+  splatSound.setVolume(0);
 
   // start playing the background audio in a loop
   backgroundSound.loop();
 }
+
+
 
 function draw() {
   if (gameState === 'cutscene') {
@@ -102,7 +103,7 @@ function draw() {
         objects.splice(i, 1);
         score++;
 
-        // Play splat sound on fruit collision
+        // play splat sound on fruit collision
         splatSound.play();
 
         if (score % 50 === 0 && score !== 0) {
@@ -269,3 +270,4 @@ function toggleMenu() {
   var dropdownContent = document.getElementById("dropdownContent");
   dropdownContent.style.display === "none" ? dropdownContent.style.display = "block" : dropdownContent.style.display = "none";
 }
+

@@ -46,7 +46,7 @@ body {
     height: 300px;
     overflow: hidden;
     margin: 0 auto;
-    background-image: url('PixelPalsIndexLogo.PNG');
+    background-image: url('PixelPalsIndexLogo.png');
     background-size: cover;
     background-position: center;
 }

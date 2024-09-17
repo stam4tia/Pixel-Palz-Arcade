@@ -13,6 +13,30 @@ body {
   position: relative; 
 }
 
+
+
+#muteButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: background-color 0.3s, transform 0.3s;
+  font-family: "VT323", monospace;
+  font-size: 16px;
+  color: #000000;
+}
+
+#muteButton:hover {
+  background-color: #f1f1f1;
+  transform: scale(1.1);
+}
+
+
 @keyframes gradientAnimation {
   0% {
     background-color: #2400d7; 

@@ -36,18 +36,21 @@ let highScore = localStorage.getItem("highScore") || 0;
 
 let retroFont;
 
+let isMuted = true; // audio starts muted
+
+
 function preload() {
-    backgroundImage = loadImage('habitat.gif'); 
-    characterGroundImg = loadImage('mauve_sitting.PNG'); 
-    characterJumpImg = loadImage('mauve_jumping.PNG'); 
-    objectImg = loadImage('fly.png'); 
-    stinkbugImg = loadImage('stinkbug.png'); 
-    gameOverImg = loadImage('GameOverMauve.PNG');
-    startScreenImg = loadImage('MauveStart.gif');
-    instructionsScreenImg = loadImage('MauveStart2.png');
-    retroFont = loadFont('Xeliard.ttf');
-    boingSound = loadSound('boing.mp3');
-    backgroundMusic = loadSound('MauveRain.mp3'); 
+    backgroundImage = loadImage('/Mauve/habitat.gif'); 
+    characterGroundImg = loadImage('/Mauve/mauve_sitting.PNG'); 
+    characterJumpImg = loadImage('/Mauve/mauve_jumping.PNG'); 
+    objectImg = loadImage('/Mauve/fly.png'); 
+    stinkbugImg = loadImage('/Mauve/stinkbug.png'); 
+    gameOverImg = loadImage('/Mauve/GameOverMauve.PNG');
+    startScreenImg = loadImage('/Mauve/MauveStart.gif');
+    instructionsScreenImg = loadImage('/Mauve/MauveStart2.png');
+    retroFont = loadFont('/Mauve/Xeliard.ttf');
+    boingSound = loadSound('/Mauve/boing.mp3');
+    backgroundMusic = loadSound('/Mauve/MauveRain.mp3'); 
 
 }
 
@@ -58,10 +61,29 @@ function setup() {
     textFont(retroFont);
 
 
-    boingSound.setVolume(0.2);
-    backgroundMusic.setVolume(0.4);
+    // boingSound.setVolume(0.2);
+    // backgroundMusic.setVolume(0.4);
+    boingSound.setVolume(0);
+    backgroundMusic.setVolume(0);
+
     backgroundMusic.loop(); 
 }
+
+
+function toggleMute() {
+    if (isMuted) {
+        boingSound.setVolume(0.2);
+        backgroundMusic.setVolume(0.4);
+      document.getElementById('muteButton').innerText = 'Mute';
+    } else {
+        boingSound.setVolume(0);
+        backgroundMusic.setVolume(0);
+      document.getElementById('muteButton').innerText = 'Unmute';
+    }
+    isMuted = !isMuted;
+  }
+  
+
 
 function draw() {
     if (gameStarted) {

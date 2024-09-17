@@ -31,30 +31,51 @@ let startScreenSound;
 let bossInvader;
 let pixeloidFont;
 
+let isMuted = true; // audio starts muted
+
 
 function preload() {
-  magicImg = loadImage('magic.gif');
-  magicShootImg = loadImage('magic_shoot.png');
-  invaderImg = loadImage('moth.gif');
-  backgroundImg = loadImage('stars.gif');
-  startScreenImg = loadImage('MagicStart.gif');
-  gameOverImg = loadImage('MagicGameOver.png');
-  gameFinishImg = loadImage('MagicFinish.gif');
+  magicImg = loadImage('/Magic_the_Butterfly/magic.gif');
+  magicShootImg = loadImage('/Magic_the_Butterfly/magic_shoot.png');
+  invaderImg = loadImage('/Magic_the_Butterfly/moth.gif');
+  backgroundImg = loadImage('/Magic_the_Butterfly/stars.gif');
+  startScreenImg = loadImage('/Magic_the_Butterfly/MagicStart.gif');
+  gameOverImg = loadImage('/Magic_the_Butterfly/MagicGameOver.png');
+  gameFinishImg = loadImage('/Magic_the_Butterfly/MagicFinish.gif');
 
-  laserSound = loadSound('laser.mp3');
-  startScreenSound = loadSound('light.mp3');
-  pixeloidFont = loadFont('PixeloidSans.ttf');
+  laserSound = loadSound('/Magic_the_Butterfly/laser.mp3');
+  startScreenSound = loadSound('/Magic_the_Butterfly/light.mp3');
+  pixeloidFont = loadFont('/Magic_the_Butterfly/PixeloidSans.ttf');
 
 }
 
 function setup() {
   createCanvas(650, 650);
 
-  laserSound.setVolume(0.1);
-  startScreenSound.setVolume(0.1);
+
+
+  laserSound.setVolume(0);
+  startScreenSound.setVolume(0);
+
 
   magic = new Magic();
   initializeInvaders();
+
+}
+
+
+function toggleMute() {
+  if (isMuted) {
+    laserSound.setVolume(0.1);
+    startScreenSound.setVolume(0.1);
+    document.getElementById('muteButton').innerText = 'Mute';
+  } else {
+    laserSound.setVolume(0);
+    startScreenSound.setVolume(0);
+    document.getElementById('muteButton').innerText = 'Unmute';
+  }
+  isMuted = !isMuted;
+}
 
 
   // add event listener for keydown event
@@ -63,7 +84,7 @@ function setup() {
       window.location.reload(); // refresh the page when 'R' is pressed
     }
   });
-}
+
 
 function initializeInvaders() {
   bullets = [];
@@ -207,6 +228,9 @@ function keyPressed() {
     if (keyCode === ENTER) {
       isGameStarted = true;
     }
+
+    userStartAudio();  // ensures audio can be played after interaction
+
   } else if (!isGameOver) {
     if (keyCode === UP_ARROW || key === 'w') {
       isMovingUp = true;
